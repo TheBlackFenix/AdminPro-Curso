@@ -2,12 +2,12 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     loadComponent: () =>
       import('./pages/pages.component').then((m) => m.PagesComponent),
     children: [
       {
-        path: 'dashboard',
+        path: '',
         loadComponent: () =>
           import('./pages/dashboard/dashboard.component').then(
             (m) => m.DashboardComponent
@@ -27,7 +27,6 @@ export const routes: Routes = [
             (m) => m.Grafica1Component
           ),
       },
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ],
   },
 
@@ -43,7 +42,7 @@ export const routes: Routes = [
         (m) => m.RegisterComponent
       ),
   },
-
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {
     path: '**',
     loadComponent: () =>
