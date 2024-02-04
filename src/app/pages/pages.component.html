@@ -1,32 +1,17 @@
-<!-- ============================================================== -->
-<!-- Main wrapper - style you can find in pages.scss -->
-<!-- ============================================================== -->
-<div id="main-wrapper">
+<nav class="h-18">
   <app-header></app-header>
-  <app-sidebar></app-sidebar>
-  <div class="page-wrapper">
-    <div class="container-fluid">
-      <app-breadcrumbs></app-breadcrumbs>
-      <!-- ============================================================== -->
-      <!-- Start Page Content -->
-      <!-- ============================================================== -->
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <router-outlet></router-outlet>
-          </div>
-        </div>
-      </div>
-      <!-- ============================================================== -->
-      <!-- End PAge Content -->
-      <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <footer class="footer">© 2024 Admin Pro by wrappixel.com</footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
+</nav>
+<div class="flex full-screen">
+  <!-- Sidebar -->
+  <aside class="bg-gray-800 text-white p-4">
+    <!-- Contenido del Sidebar -->
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!-- Contenido -->
+  <div class="flex-1 overflow-y-auto p-2 relative">
+    <app-breadcrumbs></app-breadcrumbs>
+    <!-- Contenido principal -->
+    <router-outlet></router-outlet>
   </div>
 </div>
