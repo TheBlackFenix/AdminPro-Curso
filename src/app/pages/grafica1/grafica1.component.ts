@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './grafica1.component.html',
-  styles: ``
+  styles: ``,
 })
-export class Grafica1Component {
-
-}
+export default class Grafica1Component {}

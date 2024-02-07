@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './progress.component.html',
   styleUrl: `./progress.component.css`,
 })
-export class ProgressComponent {
+export default class ProgressComponent {
   progress: number = 50;
 
   get porcentaje(): string {

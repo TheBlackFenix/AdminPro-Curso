@@ -1,9 +1,22 @@
-<div class="flex flex-col gap-2 w-48">
+<div
+  class="flex flex-col gap-2"
+  [ngClass]="{
+    'w-12 animate-fade-left':
+      sidebarService.collapse && sidebarService.collapsable,
+    'w-48 animate-fade-right':
+      !sidebarService.collapse || !sidebarService.collapsable
+  }">
   <div class="flex items-center justify-center h-16 bg-blue-600 text-white">
     <img src="tu-logo.png" alt="Logo" class="h-8 w-auto" />
   </div>
   <div class="flex flex-col items-center gap-4 p-1 w-full">
-    <app-sidebar-menu [menu]="profileMenu" class="w-full"></app-sidebar-menu>
-    <app-sidebar-menu [menu]="dashboardMenu" class="w-full"></app-sidebar-menu>
+    <app-sidebar-menu
+      [menu]="profileMenu"
+      class="w-full"
+      [collapse]="sidebarService.collapse"></app-sidebar-menu>
+    <app-sidebar-menu
+      [menu]="dashboardMenu"
+      class="w-full"
+      [collapse]="sidebarService.collapse"></app-sidebar-menu>
   </div>
 </div>

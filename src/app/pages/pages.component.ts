@@ -1,5 +1,6 @@
+import { SidebarService } from '../shared/sidebar/services/sidebar.service';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BreadcrumbsComponent } from '../shared/breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from '../shared/header/header.component';
@@ -22,4 +23,6 @@ import { FooterComponent } from '../shared/footer/footer.component';
     height: calc(100vh - 4rem);
   }`,
 })
-export class PagesComponent {}
+export default class PagesComponent {
+  sidebarService = inject(SidebarService);
+}

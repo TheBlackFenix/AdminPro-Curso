@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider'; // Import the missing MatDividerModule
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { SidebarService } from '../sidebar/services/sidebar.service';
 
 @Component({
   selector: 'app-header',
@@ -10,4 +11,6 @@ import { MatMenuModule } from '@angular/material/menu';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  sidebarService = inject(SidebarService);
+}

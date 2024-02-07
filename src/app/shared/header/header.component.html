@@ -7,7 +7,7 @@
         <img src="tu-logo.png" alt="Logo" class="h-8 w-auto mr-2" />
 
         <!-- Botón para colapsar sidebar utilizando Angular Material -->
-        <button mat-icon-button>
+        <button mat-icon-button (click)="sidebarService.toggleCollapsable()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
@@ -30,8 +30,7 @@
             src="perfil.jpg"
             alt="Perfil"
             class="h-8 w-8 rounded-full"
-            [matMenuTriggerFor]="settings"
-          />
+            [matMenuTriggerFor]="settings" />
         </button>
       </div>
     </div>

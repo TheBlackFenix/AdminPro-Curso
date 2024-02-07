@@ -1,15 +1,23 @@
 <div
-  class="flex flex-wrap gap-2 hover:bg-blue-900 justify-start p-1 rounded-sm">
+  class="flex flex-wrap gap-2 hover:bg-blue-900 justify-start p-1 rounded-sm"
+  [routerLink]="[menu.route ?? '']">
   <mat-icon class="w-1/12">{{ menu.icon }}</mat-icon>
-  <span class="w-7/12 text-xs my-auto">{{ menu.title }}</span>
-  @if (menu.subItems) {
-    <mat-icon class="w-1/12" (click)="toggle()">keyboard_arrow_down</mat-icon>
+  @if (!sidebarService.collapse || !sidebarService.collapsable) {
+    <span class="w-7/12 text-xs my-auto">{{ menu.title }}</span>
+    @if (menu.subItems) {
+      <mat-icon class="w-1/12" (click)="toggle()">{{
+        opened ? 'keyboard_arrow_up' : 'keyboard_arrow_down'
+      }}</mat-icon>
+    }
   }
 </div>
 @if (menu.subItems && opened) {
   @for (subMenu of menu.subItems; track $index) {
-    <div class="">
-      <app-sidebar-menu [menu]="subMenu" class="w-full"></app-sidebar-menu>
+    <div class="animate-fade-down">
+      <app-sidebar-menu
+        [menu]="subMenu"
+        [collapse]="collapse"
+        class="w-full"></app-sidebar-menu>
     </div>
   }
 }

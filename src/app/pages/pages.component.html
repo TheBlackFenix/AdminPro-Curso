@@ -3,7 +3,10 @@
 </nav>
 <div class="flex full-screen">
   <!-- Sidebar -->
-  <aside class="bg-gray-800 text-white p-4">
+  <aside
+    class="bg-gray-800 text-white p-4 animate-fade-right"
+    (mouseenter)="sidebarService.toggleCollapse(false)"
+    (mouseleave)="sidebarService.toggleCollapse(true)">
     <!-- Contenido del Sidebar -->
     <app-sidebar></app-sidebar>
   </aside>
